@@ -1,46 +1,159 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eu te amo, Wanessa!</title>
+    <title>Guilherme Vilas Boas Roberto | Desenvolvedor</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
-        background-color: #ffe6f2;
-        font-family: "Comic Sans MS", "Arial", sans-serif;
-        text-align: center;
-        color: #ff66b3;
+        font-family: "Roboto", sans-serif;
         margin: 0;
         padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
       }
-      h1 {
-        font-size: 3rem;
-        text-shadow: 2px 2px #ff99cc;
+      header {
+        background: #007acc;
+        color: white;
+        padding: 20px 10%;
+        text-align: center;
       }
-      .hearts {
-        font-size: 2rem;
-        color: #ff3366;
-        animation: heartbeat 1s infinite;
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
       }
-      @keyframes heartbeat {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.2);
-        }
+      header p {
+        margin: 5px 0 0;
+        font-size: 1.2em;
       }
-      .footer {
-        margin-top: 20px;
-        font-size: 1.2rem;
-        color: #cc6699;
+      .container {
+        padding: 20px 10%;
+      }
+      .section {
+        margin-bottom: 40px;
+      }
+      .section h2 {
+        color: #007acc;
+        border-bottom: 2px solid #007acc;
+        padding-bottom: 5px;
+      }
+      .project {
+        margin-bottom: 20px;
+      }
+      .project h3 {
+        margin: 0;
+      }
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+      footer p {
+        margin: 0;
+      }
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+      }
+      .contact a {
+        color: #007acc;
+        text-decoration: none;
+      }
+      .contact a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
-    <h1>Eu te amo, Wanessa! 💖</h1>
-    <div class="hearts">💕💞💓💗💝💘💖</div>
-    <p class="footer">Você é meu mundo! 🌸💐✨</p>
+    <header>
+      <h1>Guilherme Vilas Boas Roberto</h1>
+      <p>
+        Desenvolvedor Especializado em Node.js, AngularJS, e Frontend Moderno
+      </p>
+    </header>
+
+    <div class="container">
+      <section class="section" id="about">
+        <h2>Sobre Mim</h2>
+        <p>
+          Sou um desenvolvedor dedicado com sólida experiência em
+          desenvolvimento de sistemas e aplicações web. Formado em Análise e
+          Desenvolvimento de Sistemas e atualmente cursando Engenharia de
+          Software, tenho um forte interesse em criar soluções eficientes e
+          escaláveis. Meus pontos fortes incluem:
+        </p>
+        <ul>
+          <li>
+            Especialização em desenvolvimento web com tecnologias como
+            AngularJS, React Native, e Node.js.
+          </li>
+          <li>
+            Experiência em criação de APIs robustas e práticas modernas de
+            autenticação e documentação.
+          </li>
+          <li>
+            Foco em metodologias ágeis para entrega de projetos dentro dos
+            prazos.
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="portfolio">
+        <h2>Portfólio</h2>
+        <div class="project">
+          <h3>Desenvolvimento de Frontend - Freelance</h3>
+          <p>
+            Criação de telas e funcionalidades para uma empresa utilizando
+            AngularJS e Tangram Components. Implementação de modais com
+            funcionalidades avançadas.
+          </p>
+        </div>
+        <div class="project">
+          <h3>Aplicativo Mobile</h3>
+          <p>
+            Desenvolvimento de um aplicativo com 20 telas usando React Native,
+            Native Base, e boas práticas de componentização.
+          </p>
+        </div>
+        <div class="project">
+          <h3>Brancher.ai</h3>
+          <p>
+            Desenvolvimento de prompts avançados para geração de roteiros
+            personalizados, focando em configurações flexíveis e escalabilidade.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>Contato</h2>
+        <p>
+          Entre em contato comigo para discutir oportunidades ou colaborações!
+        </p>
+        <div class="contact">
+          <a href="mailto:guilherme.vilasboas@gmail.com"
+            >guilherme.vilasboas@gmail.com</a
+          >
+          <a href="https://linkedin.com/in/guilhermevilasboas" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/GuilhermeVilasBoas" target="_blank"
+            >GitHub</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2024 Guilherme Vilas Boas Roberto. Todos os direitos reservados.
+      </p>
+    </footer>
   </body>
 </html>
