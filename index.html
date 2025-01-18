@@ -69,6 +69,15 @@
       .contact a:hover {
         text-decoration: underline;
       }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+      }
+      .project-grid img {
+        width: 100%;
+        height: auto;
+      }
     </style>
   </head>
   <body>
@@ -113,6 +122,10 @@
             usando Ruby on Rails e Angular. Implementação de pipelines CI/CD com
             GitHub Actions para aumentar a eficiência dos deployments.
           </p>
+          <div class="project-grid">
+            <img src="rd-station-image.jpg" alt="RD Station Project Image">
+            <a href="https://www.rdstation.com" target="_blank">Ver Projeto</a>
+          </div>
         </div>
         <div class="project">
           <h3>Letrus</h3>
@@ -121,6 +134,10 @@
             testes unitários e de integração com Jest, e utilização do modelo
             Spotify Squad para colaboração eficiente.
           </p>
+          <div class="project-grid">
+            <img src="letrus-image.jpg" alt="Letrus Project Image">
+            <a href="https://www.letrus.com" target="_blank">Ver Projeto</a>
+          </div>
         </div>
       </section>
 
