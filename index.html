@@ -46,6 +46,7 @@
       }
       .project h3 {
         margin: 0;
+        text-align: center;
       }
       footer {
         background: #333;
@@ -70,73 +71,287 @@
         text-decoration: underline;
       }
       .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 10px;
+      }
+      .project-grid a {
+        margin-top: 10px;
       }
       .project-grid img {
         width: 100%;
         height: auto;
+        max-width: 600px;
+      }
+      .project-grid a {
+        text-align: center;
+        color: #007acc;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .project-grid a:hover {
+        text-decoration: underline;
+      }
+      body.dark-mode {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+      header.dark-mode {
+        background: #1e1e1e;
+        color: #e0e0e0;
+      }
+      .section h2.dark-mode {
+        color: #bb86fc;
+        border-bottom: 2px solid #bb86fc;
+      }
+      footer.dark-mode {
+        background: #1e1e1e;
+        color: #e0e0e0;
+      }
+      .contact a.dark-mode {
+        color: #bb86fc;
+      }
+      .switch {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        z-index: 1000;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #007acc;
+      }
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+      .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1em;
+        color: white;
+      }
+      .icon.sun {
+        left: 8px;
+        display: none;
+      }
+      .icon.moon {
+        right: 8px;
+        display: inline;
+      }
+      input:checked + .slider .icon.sun {
+        display: inline;
+      }
+      input:checked + .slider .icon.moon {
+        display: none;
+      }
+      .carousel {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        max-height: 400px;
+      }
+      .carousel img {
+        height: auto;
+        max-height: 400px;
+        display: none;
+      }
+      .carousel img.active {
+        display: block;
+      }
+      .carousel-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+      .carousel-controls button {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
       }
     </style>
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        document.querySelector("header").classList.toggle("dark-mode");
+        document
+          .querySelectorAll(".section h2")
+          .forEach((el) => el.classList.toggle("dark-mode"));
+        document.querySelector("footer").classList.toggle("dark-mode");
+        document
+          .querySelectorAll(".contact a")
+          .forEach((el) => el.classList.toggle("dark-mode"));
+      }
+
+      function initCarousel() {
+        const images = document.querySelectorAll(".carousel img");
+        let currentIndex = 0;
+
+        function showImage(index) {
+          images.forEach((img, i) => {
+            img.classList.toggle("active", i === index);
+          });
+        }
+
+        document
+          .querySelector(".carousel-prev")
+          .addEventListener("click", () => {
+            currentIndex =
+              currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+          });
+
+        document
+          .querySelector(".carousel-next")
+          .addEventListener("click", () => {
+            currentIndex =
+              currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+          });
+
+        showImage(currentIndex);
+      }
+
+      window.onload = function () {
+        document.querySelector("input[type='checkbox']").checked = true;
+        toggleDarkMode();
+        initCarousel();
+      };
+    </script>
   </head>
   <body>
     <header>
       <h1>Guilherme Vilas Boas Roberto</h1>
-      <p>Software Engineer | Especialista em Desenvolvimento Full-Stack</p>
+      <p>Software Engineer | Desenvolvimento Full-Stack</p>
+      <label class="switch">
+        <input type="checkbox" onclick="toggleDarkMode()" />
+        <span class="slider">
+          <span class="icon sun">☀️</span>
+          <span class="icon moon">🌙</span>
+        </span>
+      </label>
     </header>
 
     <div class="container">
       <section class="section" id="about">
         <h2>Sobre Mim</h2>
         <p>
-          Sou um Software Engineer com mais de três anos de experiência em
-          desenvolvimento full-stack, criando aplicações web escaláveis com Ruby
-          on Rails, React e Go. Formado em Análise e Desenvolvimento de Sistemas
-          pelo IFSP e atualmente cursando pós-graduação em Engenharia de
-          Software na PUC Minas, tenho como foco práticas modernas de
-          desenvolvimento, incluindo metodologias ágeis, CI/CD e desenvolvimento
-          orientado a testes (TDD).
+          Software Engineer com mais de 5 anos de experiência em desenvolvimento
+          full-stack. Formado em Análise e Desenvolvimento de Sistemas pelo IFSP
+          e pós-graduando em Engenharia de Software na PUC Minas, tenho como
+          foco desenvolvimento frontend e backend, com experiência em
+          desenvolvimento de aplicações web, mobile, apis, ferramentas de
+          internacionalização e manutenção de projetos.
         </p>
         <p>Principais habilidades incluem:</p>
         <ul>
+          <li>React, React Native, Ruby on Rails e GoLang</li>
           <li>
-            Ruby on Rails, Go, JavaScript, TypeScript, Angular, React, React
-            Native
+            Bancos de dados: MongoDB, Redis, Elasticsearch, MySql, Postgres e
+            SQL Server
           </li>
-          <li>Bancos de dados: MongoDB, SQL</li>
-          <li>
-            Práticas de desenvolvimento: Agile (Scrum, Kanban, XP), CI/CD
-            (GitHub Actions), TDD
-          </li>
-          <li>Ferramentas: GitHub, GitLab, ESLint, Prettier, Sentry</li>
         </ul>
       </section>
 
       <section class="section" id="portfolio">
         <h2>Portfólio</h2>
         <div class="project">
-          <h3>RD Station</h3>
+          <h3>RD Station CRM</h3>
           <p>
-            Desenvolvimento e manutenção de recursos de internacionalização
-            usando Ruby on Rails e Angular. Implementação de pipelines CI/CD com
-            GitHub Actions para aumentar a eficiência dos deployments.
+            Trabnalhei no desenvolvimento de novas funcionalidades para o RD
+            Station CRM, utilizando Ruby on Rails, React e Angular. Trabalhei no
+            time de internacionalização e de novas features, implementando novas
+            funcionalidades para o mercado latino-americano e implementando
+            ferramentas de internacionalização para os produtos.
           </p>
           <div class="project-grid">
-            <img src="rd-station-image.jpg" alt="RD Station Project Image">
-            <a href="https://www.rdstation.com" target="_blank">Ver Projeto</a>
+            <img src="img/crm.gif" alt="RD Station CRM Project Gif" />
+            <a href="https://crm.rdstation.com" target="_blank">Ver site</a>
+          </div>
+        </div>
+        <div class="project">
+          <h3>RD Station Marketing</h3>
+          <p>
+            Trabnalhei no desenvolvimento de novas funcionalidades para o RD
+            Station Marketing, utilizando Ruby on Rails, React e Angular.
+            Trabalhei no time de internacionalização, implementando novas
+            funcionalidades para o mercado latino-americano e implementando
+            ferramentas de internacionalização para os produtos.
+          </p>
+          <div class="project-grid">
+            <img
+              src="img/marketing.gif"
+              alt="RD Station Marketing Project Gif"
+            />
+            <a href="https://rdstation.com" target="_blank">Ver site</a>
           </div>
         </div>
         <div class="project">
           <h3>Letrus</h3>
           <p>
-            Criação de componentes front-end com React e Redux, implementação de
-            testes unitários e de integração com Jest, e utilização do modelo
-            Spotify Squad para colaboração eficiente.
+            Trabalhei no desenvolvimento do site e o aplicativo da Letrus, uma
+            plataforma de escrita e correção de redações, utilizando React e
+            React Native. Trabalhei no desenvolvimento de novas funcionalidades,
+            correção de bugs e refatoração do projeto para novas stacks.
           </p>
+          <div class="carousel">
+            <img
+              src="img/letrus-image1.png"
+              alt="Letrus Project Image 1"
+              class="active"
+            />
+            <img src="img/letrus-image2.png" alt="Letrus Project Image 2" />
+            <img src="img/letrus-image3.png" alt="Letrus Project Image 3" />
+            <img src="img/letrus-image4.png" alt="Letrus Project Image 4" />
+            <img src="img/letrus-image5.png" alt="Letrus Project Image 5" />
+            <div class="carousel-controls">
+              <button class="carousel-prev">❮</button>
+              <button class="carousel-next">❯</button>
+            </div>
+          </div>
           <div class="project-grid">
-            <img src="letrus-image.jpg" alt="Letrus Project Image">
-            <a href="https://www.letrus.com" target="_blank">Ver Projeto</a>
+            <a href="https://www.letrus.com" target="_blank">Ver site</a>
           </div>
         </div>
       </section>
@@ -162,7 +377,7 @@
 
     <footer>
       <p>
-        &copy; 2024 Guilherme Vilas Boas Roberto. Todos os direitos reservados.
+        &copy; 2025 Guilherme Vilas Boas Roberto. Todos os direitos reservados.
       </p>
     </footer>
   </body>
