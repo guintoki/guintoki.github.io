@@ -4,6 +4,8 @@ body {
   padding: 0;
   background-color: #E8E4D7;
   color: #333;
+  overflow-x: hidden;
+  /* Adicionado para remover o scroll lateral */
 }
 
 header {
@@ -50,10 +52,10 @@ header p {
 .header-separator {
   border: none;
   border-top: 1px solid #A8A18C;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  transform: translateX(0);
 }
 
 header .buttons {
