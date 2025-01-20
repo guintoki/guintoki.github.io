@@ -351,6 +351,46 @@ footer p {
   margin: 0;
 }
 
+.carousel {
+  position: relative;
+  width: 48%;
+  max-width: 48%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel img {
+  width: auto;
+  height: 100%;
+  display: none;
+  object-fit: contain;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .project {
     flex-direction: column;

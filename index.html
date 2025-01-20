@@ -30,6 +30,43 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      function initCarousel() {
+        const carousels = document.querySelectorAll(".carousel");
+        carousels.forEach((carousel) => {
+          const images = carousel.querySelectorAll("img");
+          let currentIndex = 0;
+
+          function showImage(index) {
+            images.forEach((img, i) => {
+              img.classList.toggle("active", i === index);
+            });
+          }
+
+          carousel
+            .querySelector(".carousel-prev")
+            .addEventListener("click", () => {
+              currentIndex =
+                currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+              showImage(currentIndex);
+            });
+
+          carousel
+            .querySelector(".carousel-next")
+            .addEventListener("click", () => {
+              currentIndex =
+                currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+              showImage(currentIndex);
+            });
+
+          showImage(currentIndex);
+        });
+      }
+
+      window.onload = function () {
+        initCarousel();
+      };
+    </script>
   </head>
   <body>
     <header>
@@ -72,12 +109,18 @@
               ferramentas de internacionalização.
             </p>
             <div class="button-project">
-              <a href="#contato" class="btn-primary">Acessar projeto</a>
+              <a
+                href="https://crm.rdstation.com"
+                target="_blank"
+                class="btn-primary"
+                >Acessar projeto</a
+              >
             </div>
           </div>
         </div>
         <img src="img/crm.gif" alt="RD Station CRM" />
       </div>
+
       <div class="project">
         <img src="img/marketing.gif" alt="RD Station Marketing" />
         <div class="side-content">
@@ -91,7 +134,12 @@
               internacionalização.
             </p>
             <div class="button-project">
-              <a href="#contato" class="btn-primary">Acessar projeto</a>
+              <a
+                href="https://rdstation.com"
+                target="_blank"
+                class="btn-primary"
+                >Acessar projeto</a
+              >
             </div>
           </div>
         </div>
@@ -108,12 +156,50 @@
               refatorei o projeto para novas stacks.
             </p>
             <div class="button-project">
+              <a
+                href="https://www.letrus.com"
+                target="_blank"
+                class="btn-primary"
+                >Acessar projeto</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="carousel">
+          <img
+            src="img/letrus-image1.png"
+            alt="Letrus Project Image 1"
+            class="active"
+          />
+          <img src="img/letrus-image2.png" alt="Letrus Project Image 2" />
+          <img src="img/letrus-image3.png" alt="Letrus Project Image 3" />
+          <img src="img/letrus-image4.png" alt="Letrus Project Image 4" />
+          <img src="img/letrus-image5.png" alt="Letrus Project Image 5" />
+          <div class="carousel-controls">
+            <button class="carousel-prev">❮</button>
+            <button class="carousel-next">❯</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="project">
+        <img src="img/marketing.gif" alt="RD Station Marketing" />
+        <div class="side-content">
+          <div class="info">
+            <h3>RD Station Marketing</h3>
+            <p>
+              Trabalhei no desenvolvimento de novas funcionalidades para o RD
+              Station Marketing, utilizando Ruby on Rails, React e Angular.
+              Trabalhei no time de internacionalização, implementando novas
+              funcionalidades para o mercado latino-americano e ferramentas de
+              internacionalização.
+            </p>
+            <div class="button-project">
               <a href="#contato" class="btn-primary">Acessar projeto</a>
             </div>
           </div>
         </div>
-        <img src="img/letrus-image1.png" alt="Letrus" />
-      </div>
+      </div> -->
     </section>
 
     <section id="sobre">
