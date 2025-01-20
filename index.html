@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,622 +18,102 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
-      }
-      header {
-        background: #007acc;
-        color: white;
-        padding: 20px 10%;
-        text-align: center;
-      }
-      header h1 {
-        margin: 0;
-        font-size: 2.5em;
-      }
-      header p {
-        margin: 5px 0 0;
-        font-size: 1.2em;
-      }
-      .container {
-        padding: 80px 10% 20px;
-      }
-      .section {
-        margin-bottom: 40px;
-        scroll-margin-top: 70px;
-      }
-      .section h2 {
-        color: #007acc;
-        border-bottom: 2px solid #007acc;
-        padding-bottom: 5px;
-        scroll-margin-top: 80px;
-      }
-      .project {
-        margin-bottom: 20px;
-      }
-      .project h3 {
-        margin: 0;
-        text-align: center;
-      }
-      footer {
-        background: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-      }
-      footer p {
-        margin: 0;
-      }
-      .contact {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 10px;
-      }
-      .contact a {
-        color: #007acc;
-        text-decoration: none;
-      }
-      .contact a:hover {
-        text-decoration: underline;
-      }
-      .project-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-      .project-grid a {
-        margin-top: 10px;
-      }
-      .project-grid img {
-        width: 100%;
-        height: auto;
-        max-width: 600px;
-      }
-      .project-grid a {
-        text-align: center;
-        color: #007acc;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      .project-grid a:hover {
-        text-decoration: underline;
-      }
-      body.dark-mode {
-        background-color: #121212;
-        color: #e0e0e0;
-      }
-      header.dark-mode {
-        background: #1e1e1e;
-        color: #e0e0e0;
-      }
-      .section h2.dark-mode {
-        color: #bb86fc;
-        border-bottom: 2px solid #bb86fc;
-      }
-      footer.dark-mode {
-        background: #1e1e1e;
-        color: #e0e0e0;
-      }
-      .contact a.dark-mode {
-        color: #bb86fc;
-      }
-      .switch {
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-        z-index: 1000;
-      }
-      .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: 0.4s;
-        border-radius: 34px;
-      }
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
-      input:checked + .slider {
-        background-color: #007acc;
-      }
-      input:checked + .slider:before {
-        transform: translateX(26px);
-      }
-      .icon {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1em;
-        color: white;
-      }
-      .icon.sun {
-        left: 8px;
-        display: none;
-      }
-      .icon.moon {
-        right: 8px;
-        display: inline;
-      }
-      input:checked + .slider .icon.sun {
-        display: inline;
-      }
-      input:checked + .slider .icon.moon {
-        display: none;
-      }
-      .carousel {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        margin: auto;
-        overflow: hidden;
-        border-radius: 10px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        max-height: 400px;
-      }
-      .carousel img {
-        height: auto;
-        max-height: 400px;
-        display: none;
-      }
-      .carousel img.active {
-        display: block;
-      }
-      .carousel-controls {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-      }
-      .carousel-controls button {
-        background-color: rgba(0, 0, 0, 0.5);
-        border: none;
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-      }
-
-      .header-section img {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        margin: 20px 0;
-        object-fit: cover;
-      }
-      .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
-      }
-      .social-icons a {
-        color: white;
-        font-size: 1.5em;
-        text-decoration: none;
-      }
-      .social-icons a:hover {
-        color: #007acc;
-      }
-      @media (max-width: 768px) {
-        .header-section img {
-          width: 100px;
-          height: 100px;
-        }
-        .project-grid img {
-          max-width: 100%;
-        }
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #007acc;
-        color: white;
-        padding: 10px 20px;
-        z-index: 1000;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      nav ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        gap: 20px;
-      }
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      nav ul li a:hover {
-        text-decoration: underline;
-      }
-      nav.dark-mode {
-        background: #1e1e1e;
-        color: #e0e0e0;
-      }
-      nav.dark-mode ul li a {
-        color: #e0e0e0;
-      }
-      nav.dark-mode ul li a:hover {
-        color: #bb86fc;
-      }
-      .language-switch {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        display: inline-block;
-        padding: 10px 20px;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-      .language-switch select {
-        background-color: #007acc;
-        color: white;
-        border: none;
-        padding: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 30px;
-      }
-      .language-switch select:hover {
-        background-color: #005f99;
-      }
-    </style>
-    <script>
-      function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
-        document.querySelector("header").classList.toggle("dark-mode");
-        document.querySelector("nav").classList.toggle("dark-mode");
-        document
-          .querySelectorAll(".section h2")
-          .forEach((el) => el.classList.toggle("dark-mode"));
-        document.querySelector("footer").classList.toggle("dark-mode");
-        document
-          .querySelectorAll(".contact a")
-          .forEach((el) => el.classList.toggle("dark-mode"));
-      }
-
-      function initCarousel() {
-        const images = document.querySelectorAll(".carousel img");
-        let currentIndex = 0;
-
-        function showImage(index) {
-          images.forEach((img, i) => {
-            img.classList.toggle("active", i === index);
-          });
-        }
-
-        document
-          .querySelector(".carousel-prev")
-          .addEventListener("click", () => {
-            currentIndex =
-              currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-            showImage(currentIndex);
-          });
-
-        document
-          .querySelector(".carousel-next")
-          .addEventListener("click", () => {
-            currentIndex =
-              currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-            showImage(currentIndex);
-          });
-
-        showImage(currentIndex);
-      }
-
-      function toggleLanguage() {
-        const elements = document.querySelectorAll("[data-en]");
-        elements.forEach((el) => {
-          const enText = el.getAttribute("data-en");
-          const ptText = el.getAttribute("data-pt");
-          if (el.innerText === ptText) {
-            el.innerText = enText;
-          } else {
-            el.innerText = ptText;
-          }
-        });
-      }
-
-      function handleLanguageChange(event) {
-        const selectedLanguage = event.target.value;
-        const elements = document.querySelectorAll("[data-en]");
-        elements.forEach((el) => {
-          const enText = el.getAttribute("data-en");
-          const ptText = el.getAttribute("data-pt");
-          el.innerText = selectedLanguage === "en" ? enText : ptText;
-        });
-      }
-
-      window.onload = function () {
-        document.querySelector("input[type='checkbox']").checked = true;
-        toggleDarkMode();
-        initCarousel();
-      };
-    </script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="#about" data-en="About Me" data-pt="Sobre Mim">Sobre Mim</a>
-        </li>
-        <li>
-          <a href="#portfolio" data-en="Portfolio" data-pt="Portfólio"
-            >Portfólio</a
-          >
-        </li>
-        <li>
-          <a href="#contact" data-en="Contact" data-pt="Contato">Contato</a>
-        </li>
-      </ul>
-    </nav>
-
-    <header class="header-section">
-      <div class="language-switch">
-        <select onchange="handleLanguageChange(event)">
-          <option value="pt">PT</option>
-          <option value="en">EN</option>
-        </select>
-      </div>
-      <img src="img/eu.JPG" alt="Guilherme Profile Photo" />
-
-      <h1
-        data-en="Guilherme Vilas Boas Roberto"
-        data-pt="Guilherme Vilas Boas Roberto"
-      >
-        Guilherme Vilas Boas Roberto
-      </h1>
-      <p
-        data-en="Software Engineer | Full-Stack Development"
-        data-pt="Software Engineer | Desenvolvimento Full-Stack"
-      >
-        Software Engineer | Desenvolvimento Full-Stack
+    <header>
+      <h1>Olá! Sou o Guilherme</h1>
+      <p>
+        Desenvolvedor <strong>apaixonado</strong> por transformar ideias em
+        realidade através de código.
       </p>
-      <label class="switch">
-        <input type="checkbox" onclick="toggleDarkMode()" />
-        <span class="slider">
-          <span class="icon sun">☀️</span>
-          <span class="icon moon">🌙</span>
-        </span>
-      </label>
+      <div class="buttons">
+        <a href="#projetos" class="btn-secondary">Projetos</a>
+        <a href="#contato" class="btn-primary">Contato</a>
+      </div>
+      <h2 class="trusted-companies">Empresas que confiaram no meu trabalho</h2>
+      <div class="logos">
+        <img src="img/letrus-logo.png" alt="Letrus Logo" />
+        <img src="img/rd-logo.png" alt="RD Station Logo" />
+        <img src="img/progress-logo.png" alt="Progress Ai Logo" />
+        <img src="img/diwo-logo.png" alt="Diwo Logo" />
+        <img src="img/baurets-logo.png" alt="Baurets Logo" />
+      </div>
     </header>
 
-    <div class="container">
-      <section class="section animate__animated animate__fadeIn" id="about">
-        <h2 data-en="About Me" data-pt="Sobre Mim">Sobre Mim</h2>
-        <p
-          data-en="Software Engineer with over 5 years of experience in full-stack development. Graduated in Systems Analysis and Development from IFSP and post-graduating in Software Engineering at PUC Minas, I focus on frontend and backend development, with experience in developing web, mobile applications, APIs, internationalization tools, and project maintenance."
-          data-pt="Software Engineer com mais de 5 anos de experiência em desenvolvimento full-stack. Formado em Análise e Desenvolvimento de Sistemas pelo IFSP e pós-graduando em Engenharia de Software na PUC Minas, tenho como foco desenvolvimento frontend e backend, com experiência em desenvolvimento de aplicações web, mobile, apis, ferramentas de internacionalização e manutenção de projetos."
-        >
-          Software Engineer com mais de 5 anos de experiência em desenvolvimento
-          full-stack. Formado em Análise e Desenvolvimento de Sistemas pelo IFSP
-          e pós-graduando em Engenharia de Software na PUC Minas, tenho como
-          foco desenvolvimento frontend e backend, com experiência em
-          desenvolvimento de aplicações web, mobile, apis, ferramentas de
-          internacionalização e manutenção de projetos.
-        </p>
-        <p
-          data-en="Main skills include:"
-          data-pt="Principais habilidades incluem:"
-        >
-          Principais habilidades incluem:
-        </p>
-        <ul>
-          <li
-            data-en="React, React Native, Ruby on Rails, and GoLang"
-            data-pt="React, React Native, Ruby on Rails e GoLang"
-          >
-            React, React Native, Ruby on Rails e GoLang
-          </li>
-          <li
-            data-en="Databases: MongoDB, Redis, Elasticsearch, MySql, Postgres, and SQL Server"
-            data-pt="Bancos de dados: MongoDB, Redis, Elasticsearch, MySql, Postgres e SQL Server"
-          >
-            Bancos de dados: MongoDB, Redis, Elasticsearch, MySql, Postgres e
-            SQL Server
-          </li>
-        </ul>
-      </section>
-
-      <section class="section animate__animated animate__fadeIn" id="portfolio">
-        <h2 data-en="Portfolio" data-pt="Portfólio">Portfólio</h2>
-        <div class="project">
-          <h3 data-en="RD Station CRM" data-pt="RD Station CRM">
-            RD Station CRM
-          </h3>
-          <p
-            data-en="Worked on developing new features for RD Station CRM, using Ruby on Rails, React, and Angular. I worked on the internationalization team and new features team, implementing new functionalities for the Latin American market and internationalization tools for the products."
-            data-pt="Trabalhei no desenvolvimento de novas funcionalidades para o RD Station CRM, utilizando Ruby on Rails, React e Angular. Trabalhei no time de internacionalização e de novas features, implementando novas funcionalidades para o mercado latino-americano e implementando ferramentas de internacionalização para os produtos."
-          >
+    <section id="projetos">
+      <h2>Projetos selecionados</h2>
+      <div class="project">
+        <img src="img/rdstation-crm.png" alt="RD Station CRM" />
+        <div class="info">
+          <h3>RD Station CRM</h3>
+          <p>
             Trabalhei no desenvolvimento de novas funcionalidades para o RD
             Station CRM, utilizando Ruby on Rails, React e Angular. Trabalhei no
             time de internacionalização e de novas features, implementando novas
-            funcionalidades para o mercado latino-americano e implementando
-            ferramentas de internacionalização para os produtos.
+            funcionalidades para o mercado latino-americano e ferramentas de
+            internacionalização.
           </p>
-          <div class="project-grid">
-            <img src="img/crm.gif" alt="RD Station CRM Project Gif" />
-            <a
-              href="https://crm.rdstation.com"
-              target="_blank"
-              data-en="View site"
-              data-pt="Ver site"
-              >Ver site</a
-            >
-          </div>
+          <a href="#">Acessar projeto</a>
         </div>
-        <div class="project">
-          <h3 data-en="RD Station Marketing" data-pt="RD Station Marketing">
-            RD Station Marketing
-          </h3>
-          <p
-            data-en="Worked on developing new features for RD Station Marketing, using Ruby on Rails, React, and Angular. I worked on the internationalization team, implementing new functionalities for the Latin American market and internationalization tools for the products."
-            data-pt="Trabalhei no desenvolvimento de novas funcionalidades para o RD Station Marketing, utilizando Ruby on Rails, React e Angular. Trabalhei no time de internacionalização, implementando novas funcionalidades para o mercado latino-americano e implementando ferramentas de internacionalização para os produtos."
-          >
+      </div>
+      <div class="project">
+        <img src="img/rdstation-marketing.png" alt="RD Station Marketing" />
+        <div class="info">
+          <h3>Deliver instant answers</h3>
+          <p>
             Trabalhei no desenvolvimento de novas funcionalidades para o RD
             Station Marketing, utilizando Ruby on Rails, React e Angular.
             Trabalhei no time de internacionalização, implementando novas
-            funcionalidades para o mercado latino-americano e implementando
-            ferramentas de internacionalização para os produtos.
+            funcionalidades para o mercado latino-americano e ferramentas de
+            internacionalização.
           </p>
-          <div class="project-grid">
-            <img
-              src="img/marketing.gif"
-              alt="RD Station Marketing Project Gif"
-            />
-            <a
-              href="https://rdstation.com"
-              target="_blank"
-              data-en="View site"
-              data-pt="Ver site"
-              >Ver site</a
-            >
-          </div>
+          <a href="#">Acessar projeto</a>
         </div>
-        <div class="project">
-          <h3 data-en="Letrus" data-pt="Letrus">Letrus</h3>
-          <p
-            data-en="Worked on developing the website and app for Letrus, a writing and essay correction platform, using React and React Native. I worked on developing new features, fixing bugs, and refactoring the project for new stacks."
-            data-pt="Trabalhei no desenvolvimento do site e o aplicativo da Letrus, uma plataforma de escrita e correção de redações, utilizando React e React Native. Trabalhei no desenvolvimento de novas funcionalidades, correção de bugs e refatoração do projeto para novas stacks."
-          >
-            Trabalhei no desenvolvimento do site e o aplicativo da Letrus, uma
+      </div>
+      <div class="project">
+        <img src="img/letrus.png" alt="Letrus" />
+        <div class="info">
+          <h3>Letrus</h3>
+          <p>
+            Trabalhei no desenvolvimento do site e aplicativo da Letrus, uma
             plataforma de escrita e correção de redações, utilizando React e
-            React Native. Trabalhei no desenvolvimento de novas funcionalidades,
-            correção de bugs e refatoração do projeto para novas stacks.
+            React Native. Desenvolvi novas funcionalidades, corrigi bugs e
+            refatorei o projeto para novas stacks.
           </p>
-          <div class="carousel">
-            <img
-              src="img/letrus-image1.png"
-              alt="Letrus Project Image 1"
-              class="active"
-            />
-            <img src="img/letrus-image2.png" alt="Letrus Project Image 2" />
-            <img src="img/letrus-image3.png" alt="Letrus Project Image 3" />
-            <img src="img/letrus-image4.png" alt="Letrus Project Image 4" />
-            <img src="img/letrus-image5.png" alt="Letrus Project Image 5" />
-            <div class="carousel-controls">
-              <button class="carousel-prev">❮</button>
-              <button class="carousel-next">❯</button>
-            </div>
-          </div>
-          <div class="project-grid">
-            <a
-              href="https://www.letrus.com"
-              target="_blank"
-              data-en="View site"
-              data-pt="Ver site"
-              >Ver site</a
-            >
-          </div>
+          <a href="#">Acessar projeto</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section animate__animated animate__fadeIn" id="contact">
-        <h2 data-en="Contact" data-pt="Contato">Contato</h2>
-        <p
-          data-en="Get in touch with me to discuss opportunities or collaborations!"
-          data-pt="Entre em contato comigo para discutir oportunidades ou colaborações!"
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>
+        Entre em contato comigo para discutir oportunidades ou colaborações!
+      </p>
+      <p>
+        <a href="mailto:guilherme.vb.roberto@gmail.com"
+          >guilherme.vb.roberto@gmail.com</a
         >
-          Entre em contato comigo para discutir oportunidades ou colaborações!
-        </p>
-        <div class="contact">
-          <a
-            href="mailto:guilherme.vb.roberto@gmail.com"
-            data-en="guilherme.vb.roberto@gmail.com"
-            data-pt="guilherme.vb.roberto@gmail.com"
-            >guilherme.vb.roberto@gmail.com</a
-          >
-          <a
-            href="https://linkedin.com/in/guilherme-vilas-boas-roberto"
-            target="_blank"
-            data-en="LinkedIn"
-            data-pt="LinkedIn"
-            >LinkedIn</a
-          >
-          <a
-            href="https://github.com/guintoki"
-            target="_blank"
-            data-en="GitHub"
-            data-pt="GitHub"
-            >GitHub</a
-          >
-        </div>
-      </section>
-    </div>
+      </p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </section>
 
     <footer>
-      <p
-        data-en="&copy; 2025 Guilherme Vilas Boas Roberto. All rights reserved."
-        data-pt="&copy; 2025 Guilherme Vilas Boas Roberto. Todos os direitos reservados."
-      >
+      <p>
         &copy; 2025 Guilherme Vilas Boas Roberto. Todos os direitos reservados.
       </p>
-      <div class="social-icons">
-        <a href="https://github.com/guintoki" target="_blank" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:guilherme.vb.roberto@gmail.com" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a
-          href="https://linkedin.com/in/guilherme-vilas-boas-roberto"
-          target="_blank"
-          title="LinkedIn"
-        >
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a
-          href="https://instagram.com/guintoki.g"
-          target="_blank"
-          title="Instagram"
-        >
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
     </footer>
   </body>
 </html>
