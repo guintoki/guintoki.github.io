@@ -539,6 +539,32 @@ footer p {
   }
 }
 
+@media (max-width: 600px) {
+  .project {
+    flex-direction: column;
+  }
+
+  .project .side-content {
+    order: 1;
+    width: 100%;
+  }
+
+  .project .carousel {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .project img {
+    width: 100%;
+  }
+
+  .project .side-content .info {
+    width: 90%;
+  }
+}
+
 @media (max-width: 500px) {
   header h1 {
     font-size: 2em;
