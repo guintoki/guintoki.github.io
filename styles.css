@@ -199,6 +199,38 @@ h2 {
   text-decoration-skip-ink: none;
 }
 
+.project.hidden {
+  display: none;
+}
+
+#show-more-btn,
+#show-less-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  margin-top: 40px;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  background-color: #fff;
+  color: #005f3c;
+  border: 2px solid #005f3c;
+  cursor: pointer;
+}
+
+#show-more-btn:hover,
+#show-less-btn:hover {
+  background-color: #005f3c;
+  color: white;
+}
+
 section .about {
   display: flex;
   gap: 20px;
@@ -211,6 +243,7 @@ section .about {
 
 section .about img {
   margin-right: 20px;
+  max-width: 50%;
 }
 
 section .about h2 {

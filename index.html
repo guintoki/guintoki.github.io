@@ -63,6 +63,26 @@
         });
       }
 
+      function showMoreProjects() {
+        const hiddenProjects = document.querySelectorAll(".project.hidden");
+        hiddenProjects.forEach((project) => {
+          project.classList.remove("hidden");
+        });
+        document.getElementById("show-more-btn").style.display = "none";
+        document.getElementById("show-less-btn").style.display = "block";
+      }
+
+      function showLessProjects() {
+        const hiddenProjects = document.querySelectorAll(".project");
+        hiddenProjects.forEach((project, index) => {
+          if (index >= 2) {
+            project.classList.add("hidden");
+          }
+        });
+        document.getElementById("show-more-btn").style.display = "block";
+        document.getElementById("show-less-btn").style.display = "none";
+      }
+
       window.onload = function () {
         initCarousel();
       };
@@ -145,7 +165,7 @@
         </div>
       </div>
 
-      <div class="project">
+      <div class="project hidden">
         <div class="side-content">
           <div class="info">
             <h3>Letrus</h3>
@@ -182,24 +202,43 @@
         </div>
       </div>
 
-      <!-- <div class="project">
-        <img src="img/marketing.gif" alt="RD Station Marketing" />
+      <div class="project hidden">
+        <img src="img/diwo.gif" alt="Diwo Maplead" />
         <div class="side-content">
           <div class="info">
-            <h3>RD Station Marketing</h3>
+            <h3>Diwo Maplead</h3>
             <p>
-              Trabalhei no desenvolvimento de novas funcionalidades para o RD
-              Station Marketing, utilizando Ruby on Rails, React e Angular.
-              Trabalhei no time de internacionalização, implementando novas
-              funcionalidades para o mercado latino-americano e ferramentas de
-              internacionalização.
+              Trabalhei no desenvolvimento de novas funcionalidades para o Diwo
+              Maplead, utilizando Ruby on Rails, React e Angular. Trabalhei no
+              desenvolvimento de novas funcionalidades e manutenção do projeto.
             </p>
             <div class="button-project">
-              <a href="#contato" class="btn-primary">Acessar projeto</a>
+              <a
+                href="https://app.maplead.com.br"
+                target="_blank"
+                class="btn-primary"
+                >Acessar projeto</a
+              >
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
+
+      <button
+        id="show-more-btn"
+        class="btn-secondary"
+        onclick="showMoreProjects()"
+      >
+        Mostrar mais
+      </button>
+      <button
+        id="show-less-btn"
+        class="btn-secondary"
+        onclick="showLessProjects()"
+        style="display: none"
+      >
+        Mostrar menos
+      </button>
     </section>
 
     <section id="sobre">
@@ -210,7 +249,7 @@
           <p>
             Software Engineer com mais de 5 anos de experiência em
             desenvolvimento full-stack. Formado em Análise e Desenvolvimento de
-            Sistemas pelo IFSP e pós-graduando em Engenharia de Software na PUC
+            Sistemas pelo IFSP e pós-gradudo em Engenharia de Software na PUC
             Minas, tenho como foco desenvolvimento frontend e backend, com
             experiência em desenvolvimento de aplicações web, mobile, apis,
             ferramentas de internacionalização e manutenção de projetos.
