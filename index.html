@@ -83,8 +83,17 @@
         document.getElementById("show-less-btn").style.display = "none";
       }
 
+      function typeWriter(element) {
+        const textArray = element.innerHTML.split("");
+        element.innerHTML = "";
+        textArray.forEach((letter, i) => {
+          setTimeout(() => (element.innerHTML += letter), 75 * i);
+        });
+      }
+
       window.onload = function () {
         initCarousel();
+        typeWriter(document.querySelector("header h1"));
       };
     </script>
   </head>
