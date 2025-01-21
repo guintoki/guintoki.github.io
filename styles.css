@@ -429,13 +429,180 @@ footer p {
 @media (max-width: 768px) {
   .project {
     flex-direction: column;
+    height: auto;
+  }
+
+  .project img {
+    width: 100%;
+    order: 2;
+    /* Garante que a imagem seja exibida abaixo do .info */
+  }
+
+  .project .side-content {
+    width: 100%;
+    order: 1;
+    /* Garante que o .info seja exibido acima da imagem */
+  }
+
+  .project .side-content .info {
+    width: 90%;
   }
 
   header {
     padding: 20px;
   }
 
+  header p {
+    width: 100%;
+  }
+
   section {
     padding: 20px;
+  }
+
+  section h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .projects-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 0 5%;
+  }
+
+  .about img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .about h2 {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .about p {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .about .button-project {
+    text-align: center;
+  }
+
+  .about .button-project a {
+    display: inline-block;
+  }
+
+  .contact-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contacts-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-text p {
+    text-align: center;
+  }
+
+  .contacts-info p {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .carousel {
+    width: 100%;
+    max-width: 100%;
+    max-height: 460px;
+    margin-top: 30px;
+  }
+
+  .project img {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  .logos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trusted-companies {
+    font-size: 14px;
+  }
+
+  .companies {
+    height: auto;
+  }
+
+  .logos img {
+    max-height: 40px;
+  }
+
+  section h2 {
+    font-size: 1.5em;
+  }
+
+  .projects-subtitle {
+    font-size: 16px;
+  }
+
+  .project .info h3 {
+    font-size: 1.2em;
+  }
+
+  .project .info p {
+    font-size: 16px;
+  }
+
+  .project .info .button-project a {
+    font-size: 16px;
+  }
+
+  .about h2 {
+    font-size: 40px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+
+  .about .button-project a {
+    font-size: 16px;
+  }
+
+  .contact-text p {
+    font-size: 14px;
+  }
+
+  .carousel {
+    width: 100%;
+    max-width: 100%;
   }
 }
