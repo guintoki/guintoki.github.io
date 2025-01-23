@@ -100,8 +100,8 @@ header .buttons a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
   margin-top: 40px;
+  gap: 30px;
 }
 
 .logos img {
@@ -539,14 +539,31 @@ body.dark-mode .nav-link:hover {
   color: white;
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #005f3c;
+}
+
 .switch {
-  position: absolute;
-  top: 20px;
-  right: 80px;
+  position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
-  z-index: 1000;
 }
 
 .switch input {
@@ -611,26 +628,6 @@ input:checked+.slider .icon.sun {
 
 input:checked+.slider .icon.moon {
   display: none;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-select {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-select:focus {
-  outline: none;
-  border-color: #005f3c;
 }
 
 @media (max-width: 768px) {
@@ -742,6 +739,10 @@ select:focus {
   .project img {
     margin-top: 30px;
   }
+
+  .logos {
+    gap: 10px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -775,6 +776,10 @@ select:focus {
     font-size: 2em;
   }
 
+  .navbar .controls {
+    display: none;
+  }
+
   header p {
     font-size: 1em;
   }
@@ -783,6 +788,7 @@ select:focus {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    gap: 20px;
   }
 
   .trusted-companies {
