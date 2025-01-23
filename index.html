@@ -91,6 +91,10 @@
         });
       }
 
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
       window.onload = function () {
         initCarousel();
         typeWriter(document.querySelector("header h1"));
@@ -99,6 +103,20 @@
   </head>
   <body>
     <header>
+      <nav class="navbar">
+        <div class="nav-links">
+          <a href="#projetos" class="nav-link">Projetos</a>
+          <a href="#sobre" class="nav-link">Sobre</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </div>
+        <label class="switch">
+          <input type="checkbox" onclick="toggleDarkMode()" />
+          <span class="slider">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+          </span>
+        </label>
+      </nav>
       <h1>Olá! Sou o Guilherme</h1>
       <p>
         Desenvolvedor <strong>apaixonado</strong> por transformar ideias em
@@ -394,7 +412,11 @@
 
     <footer>
       <p>
-        &copy; 2025 Guilherme Vilas Boas Roberto. Todos os direitos reservados.
+        &copy;
+        <a href="https://mrnr.com.br" target="_blank" title="Instagram"
+          >MRNRDSGN</a
+        >
+        e Guilherme Roberto. Todos os direitos reservados
       </p>
     </footer>
   </body>
