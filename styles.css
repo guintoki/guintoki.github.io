@@ -26,7 +26,6 @@ header h1 {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   margin-top: 0;
-
 }
 
 header p {
@@ -641,6 +640,10 @@ input:checked+.slider .icon.moon {
     order: 2;
   }
 
+  .carousel {
+    order: 2;
+  }
+
   .project .side-content {
     width: 100%;
     order: 1;
@@ -784,7 +787,6 @@ input:checked+.slider .icon.moon {
   .controls {
     margin-bottom: 10px;
   }
-
 
   header p {
     font-size: 1em;
