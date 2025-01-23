@@ -776,9 +776,15 @@ input:checked+.slider .icon.moon {
     font-size: 2em;
   }
 
-  .navbar .controls {
-    display: none;
+  .navbar {
+    flex-direction: column-reverse;
+    gap: 10px;
   }
+
+  .controls {
+    margin-bottom: 10px;
+  }
+
 
   header p {
     font-size: 1em;
