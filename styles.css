@@ -98,9 +98,9 @@ header .buttons a {
 
 .logos {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   margin-top: 40px;
 }
 
@@ -542,7 +542,7 @@ body.dark-mode .nav-link:hover {
 .switch {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 80px;
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -611,6 +611,26 @@ input:checked+.slider .icon.sun {
 
 input:checked+.slider .icon.moon {
   display: none;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #005f3c;
 }
 
 @media (max-width: 768px) {

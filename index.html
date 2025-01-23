@@ -95,6 +95,97 @@
         document.body.classList.toggle("dark-mode");
       }
 
+      function changeLanguage(language) {
+        if (language === "en") {
+          document.querySelector("header h1").innerText =
+            "Hello! I'm Guilherme";
+          document.querySelector("header p").innerHTML =
+            "Developer <strong>passionate</strong> about turning ideas into reality through code.";
+          document.querySelector(".nav-link[href='#projetos']").innerText =
+            "Projects";
+          document.querySelector(".nav-link[href='#sobre']").innerText =
+            "About";
+          document.querySelector(".nav-link[href='#contato']").innerText =
+            "Contact";
+          document.querySelector(".btn-secondary[href='#projetos']").innerText =
+            "Projects";
+          document.querySelector(".btn-primary[href='#contato']").innerText =
+            "Contact";
+          document.querySelector(".trusted-companies").innerText =
+            "Companies that trust my work";
+          document.querySelector("#projetos h2").innerText =
+            "Selected Projects";
+          document.querySelector(".projects-subtitle").innerText =
+            "Impactful, intuitive, and accessible web experiences for everyone.";
+          document.querySelector("#show-more-btn").innerText = "Show more";
+          document.querySelector("#show-less-btn").innerText = "Show less";
+          document.querySelector("#sobre h2").innerText =
+            "Digital solutions that make a difference.";
+          document.querySelector("#sobre p").innerText =
+            "Software Engineer with over 5 years of solid experience in full-stack development. Graduated in Systems Analysis and Development from IFSP and post-graduated in Software Engineering from PUC Minas, I have solid expertise in frontend and backend development. My professional journey includes extensive experience in developing web and mobile applications, integrating and building APIs, implementing internationalization tools, and maintaining and evolving complex projects.";
+          document.querySelector("#sobre ul li:nth-child(1) span").innerText =
+            "React, React Native, Ruby on Rails, and GoLang";
+          document.querySelector("#sobre ul li:nth-child(2) span").innerText =
+            "MongoDB, Redis, Elasticsearch";
+          document.querySelector("#sobre ul li:nth-child(3) span").innerText =
+            "MySql, Postgres, and SQL Server";
+          document.querySelector("#sobre .button-project a").innerText =
+            "Get in touch";
+          document.querySelector("#contato .contact-text p").innerText =
+            "Contact me to discuss opportunities or collaborations!";
+
+          // Translate project descriptions
+          document.querySelectorAll(".project .info").forEach((info, index) => {
+            switch (index) {
+              case 0:
+                info.querySelector("h3").innerText = "RD Station CRM";
+                info.querySelector("p").innerText =
+                  "Developed new features for RD Station CRM using Ruby on Rails, React, and Angular. Worked directly with the internationalization and new features teams, implementing innovative solutions for the Latin American market, as well as advanced internationalization support tools.";
+                info.querySelector(".button-project a").innerText =
+                  "Access project";
+                break;
+              case 1:
+                info.querySelector("h3").innerText = "RD Station Marketing";
+                info.querySelector("p").innerText =
+                  "Developed new features for RD Station Marketing using Ruby on Rails, React, and Angular. Actively contributed to the internationalization team, creating solutions for the Latin American market and implementing robust internationalization support tools.";
+                info.querySelector(".button-project a").innerText =
+                  "Access project";
+                break;
+              case 2:
+                info.querySelector("h3").innerText = "Letrus";
+                info.querySelector("p").innerText =
+                  "Developed the Letrus website, a platform focused on writing and essay correction, using React and Typescript. Implemented new features, fixed bugs, and performed significant refactoring to adapt the project to new stacks.";
+                info.querySelector(".button-project a").innerText =
+                  "Access project";
+                break;
+              case 3:
+                info.querySelector("h3").innerText = "Letrus App";
+                info.querySelector("p").innerText =
+                  "Developed the Letrus mobile app using React Native and Typescript. Implemented new features, as well as continuous publishing and maintenance of the app on official stores.";
+                info.querySelector(".button-project a").innerText =
+                  "Access project";
+                break;
+              case 4:
+                info.querySelector("h3").innerText = "MakeProgress Ai";
+                info.querySelector("p").innerText =
+                  "Developed new features using React and Next.js, creating components, layouts, and implementing innovative features that use artificial intelligence to generate high-value results for clients.";
+                info.querySelector(".button-project a").innerText =
+                  "Access project";
+                break;
+              case 5:
+                info.querySelector("h3").innerText = "Diwo Maplead";
+                info.querySelector("p").innerText =
+                  "Developed new features for Diwo Maplead using Typescript, React, and Next.js. Worked on implementing advanced features and continuous maintenance of the project, ensuring its evolution and stability.";
+                info.querySelector(".button-project a").innerText =
+                  "Access project";
+                break;
+            }
+          });
+        } else {
+          location.reload();
+        }
+      }
+
       window.onload = function () {
         initCarousel();
         typeWriter(document.querySelector("header h1"));
@@ -109,13 +200,19 @@
           <a href="#sobre" class="nav-link">Sobre</a>
           <a href="#contato" class="nav-link">Contato</a>
         </div>
-        <label class="switch">
-          <input type="checkbox" onclick="toggleDarkMode()" />
-          <span class="slider">
-            <span class="icon sun">☀️</span>
-            <span class="icon moon">🌙</span>
-          </span>
-        </label>
+        <div class="controls">
+          <label class="switch">
+            <input type="checkbox" onclick="toggleDarkMode()" />
+            <span class="slider">
+              <span class="icon sun">☀️</span>
+              <span class="icon moon">🌙</span>
+            </span>
+          </label>
+          <select onchange="changeLanguage(this.value)">
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
       </nav>
       <h1>Olá! Sou o Guilherme</h1>
       <p>
@@ -397,13 +494,6 @@
               title="LinkedIn"
             >
               <i class="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="https://instagram.com/guintoki.g"
-              target="_blank"
-              title="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
             </a>
           </div>
         </div>
