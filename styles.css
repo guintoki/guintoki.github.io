@@ -833,39 +833,75 @@ body.dark-mode .marquee-track img:hover {
   font-size: var(--f-size-sm);
   font-weight: 600;
   color: var(--c-text);
-  margin-bottom: var(--s-md);
+  margin-bottom: var(--s-lg);
 }
 
-.skills-grid {
+.skills-categories {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--s-md);
+  gap: var(--s-lg);
   margin-bottom: var(--s-2xl);
 }
 
-.skill-category {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--s-md);
-  padding: var(--s-md) var(--s-lg);
-  border-radius: var(--r-md);
+.skill-group {
+  padding: var(--s-lg);
+  border-radius: var(--r-lg);
   background-color: var(--c-bg-alt);
   border: 1px solid var(--c-border);
-  font-size: var(--f-size-sm);
-  color: var(--c-text-secondary);
   transition: border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
 }
 
-.skill-category:hover {
+.skill-group:hover {
   border-color: rgba(var(--c-primary-rgb), 0.3);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-group-title {
+  display: flex;
+  align-items: center;
+  gap: var(--s-sm);
+  font-family: var(--f-heading);
+  font-size: var(--f-size-base);
+  font-weight: 600;
+  color: var(--c-text);
+  margin-bottom: var(--s-md);
+}
+
+.skill-group-icon {
+  font-size: 1.2em;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-sm);
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  background-color: var(--c-accent-subtle);
+  color: var(--c-primary);
+  font-size: var(--f-size-xs);
+  font-weight: 500;
+  border: 1px solid rgba(var(--c-primary-rgb), 0.1);
+  transition: all var(--t-fast);
+}
+
+.skill-tag:hover {
+  background-color: var(--c-primary);
+  color: white;
+  transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
 }
 
-.skill-icon {
-  font-size: 1.3em;
-  flex-shrink: 0;
-  line-height: 1.4;
+body.dark-mode .skill-tag:hover {
+  background-color: var(--c-accent);
+  color: #0c1222;
 }
 
 /* ─── 12. Contact Section ─────────────────────────────────────── */
@@ -1058,7 +1094,7 @@ body.dark-mode .marquee-track img:hover {
     text-align: center;
   }
 
-  .skills-grid {
+  .skills-categories {
     grid-template-columns: 1fr;
   }
 

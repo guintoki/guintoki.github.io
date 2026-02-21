@@ -130,10 +130,10 @@ const translations = {
     "about.description":
       "Engenheiro de Software com mais de 5 anos de experiência consolidada em desenvolvimento full-stack. Graduado em Análise e Desenvolvimento de Sistemas pelo IFSP e pós-graduado em Engenharia de Software pela PUC Minas, possuo sólida expertise em desenvolvimento frontend e backend. Minha trajetória profissional inclui ampla experiência no desenvolvimento de aplicações web e mobile, integração e construção de APIs, implementação de ferramentas de internacionalização e na manutenção e evolução de projetos complexos.",
     "about.skills.label": "Principais habilidades:",
-    "about.skill.1": "React, React Native, Ruby on Rails e GoLang",
-    "about.skill.2": "MongoDB, Redis, Elasticsearch",
-    "about.skill.3": "MySql, Postgres e SQL Server",
-    "about.skill.4": "AWS, Azure e GCP",
+    "about.cat.frontend": "Frontend",
+    "about.cat.backend": "Backend",
+    "about.cat.cloud": "Cloud & Arquitetura",
+    "about.cat.db": "Banco de Dados",
     "about.cta": "Entre em contato",
     "contact.title": "Vamos conversar?",
     "contact.subtitle":
@@ -178,10 +178,10 @@ const translations = {
     "about.description":
       "Software Engineer with over 5 years of solid experience in full-stack development. Graduated in Systems Analysis and Development from IFSP and post-graduated in Software Engineering from PUC Minas, with solid expertise in frontend and backend development. My professional journey includes extensive experience in developing web and mobile applications, integrating and building APIs, implementing internationalization tools, and maintaining and evolving complex projects.",
     "about.skills.label": "Key skills:",
-    "about.skill.1": "React, React Native, Ruby on Rails & GoLang",
-    "about.skill.2": "MongoDB, Redis, Elasticsearch",
-    "about.skill.3": "MySQL, Postgres & SQL Server",
-    "about.skill.4": "AWS, Azure & GCP",
+    "about.cat.frontend": "Frontend",
+    "about.cat.backend": "Backend",
+    "about.cat.cloud": "Cloud & Architecture",
+    "about.cat.db": "Databases",
     "about.cta": "Get in touch",
     "contact.title": "Let's talk?",
     "contact.subtitle":
