@@ -1,458 +1,368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guilherme Vilas Boas Roberto | Desenvolvedor</title>
+    <title>Guilherme Vilas Boas Roberto | Software Engineer</title>
     <meta
       name="description"
       content="Portfólio de Guilherme Vilas Boas Roberto, Software Engineer especializado em desenvolvimento full-stack."
     />
     <meta
       name="keywords"
-      content="Guilherme Vilas Boas, Desenvolvedor, React, Ruby on Rails, GoLang, Portfólio"
+      content="Guilherme Vilas Boas, Desenvolvedor, React, Ruby on Rails, GoLang, Portfólio, Frontend, Software Engineer"
     />
     <meta name="author" content="Guilherme Vilas Boas Roberto" />
     <meta
       property="og:title"
-      content="Guilherme Vilas Boas Roberto | Desenvolvedor"
+      content="Guilherme Vilas Boas Roberto | Software Engineer"
     />
     <meta
       property="og:description"
       content="Portfólio de Guilherme Vilas Boas Roberto, Software Engineer especializado em desenvolvimento full-stack."
     />
     <meta property="og:image" content="https://guintoki.github.io/img/eu.png" />
-    <meta property="og:url" content="https://seusite.com" />
+    <meta property="og:url" content="https://guintoki.github.io" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600&display=swap"
-      rel="stylesheet"
-    />
+
+    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
-    <script>
-      function initCarousel() {
-        const carousels = document.querySelectorAll(".carousel");
-        carousels.forEach((carousel) => {
-          const images = carousel.querySelectorAll("img");
-          let currentIndex = 0;
-
-          function showImage(index) {
-            images.forEach((img, i) => {
-              img.classList.toggle("active", i === index);
-            });
-          }
-
-          carousel
-            .querySelector(".carousel-prev")
-            .addEventListener("click", () => {
-              currentIndex =
-                currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-              showImage(currentIndex);
-            });
-
-          carousel
-            .querySelector(".carousel-next")
-            .addEventListener("click", () => {
-              currentIndex =
-                currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-              showImage(currentIndex);
-            });
-
-          showImage(currentIndex);
-        });
-      }
-
-      function showMoreProjects() {
-        const hiddenProjects = document.querySelectorAll(".project.hidden");
-        hiddenProjects.forEach((project) => {
-          project.classList.remove("hidden");
-        });
-        document.getElementById("show-more-btn").style.display = "none";
-        document.getElementById("show-less-btn").style.display = "block";
-      }
-
-      function showLessProjects() {
-        const hiddenProjects = document.querySelectorAll(".project");
-        hiddenProjects.forEach((project, index) => {
-          if (index >= 2) {
-            project.classList.add("hidden");
-          }
-        });
-        document.getElementById("show-more-btn").style.display = "block";
-        document.getElementById("show-less-btn").style.display = "none";
-      }
-
-      function typeWriter(element) {
-        const textArray = element.innerHTML.split("");
-        element.innerHTML = "";
-        textArray.forEach((letter, i) => {
-          setTimeout(() => (element.innerHTML += letter), 75 * i);
-        });
-      }
-
-      function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
-      }
-
-      function changeLanguage(language) {
-        if (language === "en") {
-          document.querySelector("header h1").innerText =
-            "Hello! I'm Guilherme";
-          document.querySelector("header p").innerHTML =
-            "Developer <strong>passionate</strong> about turning ideas into reality through code.";
-          document.querySelector(".nav-link[href='#projetos']").innerText =
-            "Projects";
-          document.querySelector(".nav-link[href='#sobre']").innerText =
-            "About";
-          document.querySelector(".nav-link[href='#contato']").innerText =
-            "Contact";
-          document.querySelector(".btn-secondary[href='#projetos']").innerText =
-            "Projects";
-          document.querySelector(".btn-primary[href='#contato']").innerText =
-            "Contact";
-          document.querySelector(".trusted-companies").innerText =
-            "Companies that trust my work";
-          document.querySelector("#projetos h2").innerText =
-            "Selected Projects";
-          document.querySelector(".projects-subtitle").innerText =
-            "Impactful, intuitive, and accessible web experiences for everyone.";
-          document.querySelector("#show-more-btn").innerText = "Show more";
-          document.querySelector("#show-less-btn").innerText = "Show less";
-          document.querySelector("#sobre h2").innerText =
-            "Digital solutions that make a difference.";
-          document.querySelector("#sobre p").innerText =
-            "Software Engineer with over 5 years of solid experience in full-stack development. Graduated in Systems Analysis and Development from IFSP and post-graduated in Software Engineering from PUC Minas, I have solid expertise in frontend and backend development. My professional journey includes extensive experience in developing web and mobile applications, integrating and building APIs, implementing internationalization tools, and maintaining and evolving complex projects.";
-          document.querySelector("#sobre ul li:nth-child(1) span").innerText =
-            "React, React Native, Ruby on Rails, and GoLang";
-          document.querySelector("#sobre ul li:nth-child(2) span").innerText =
-            "MongoDB, Redis, Elasticsearch";
-          document.querySelector("#sobre ul li:nth-child(3) span").innerText =
-            "MySql, Postgres, and SQL Server";
-          document.querySelector("#sobre ul li:nth-child(4) span").innerText =
-            "AWS, Azure and GCP";
-          document.querySelector("#sobre .button-project a").innerText =
-            "Get in touch";
-          document.querySelector("#contato .contact-text p").innerText =
-            "Contact me to discuss opportunities or collaborations!";
-
-          // Translate project descriptions
-          document.querySelectorAll(".project .info").forEach((info, index) => {
-            switch (index) {
-              case 0:
-                info.querySelector("h3").innerText = "RD Station CRM";
-                info.querySelector("p").innerText =
-                  "Developed new features for RD Station CRM using Ruby on Rails, React, and Angular. Worked directly with the internationalization and new features teams, implementing innovative solutions for the Latin American market, as well as advanced internationalization support tools.";
-                info.querySelector(".button-project a").innerText =
-                  "Access project";
-                break;
-              case 1:
-                info.querySelector("h3").innerText = "RD Station Marketing";
-                info.querySelector("p").innerText =
-                  "Developed new features for RD Station Marketing using Ruby on Rails, React, and Angular. Actively contributed to the internationalization team, creating solutions for the Latin American market and implementing robust internationalization support tools.";
-                info.querySelector(".button-project a").innerText =
-                  "Access project";
-                break;
-              case 2:
-                info.querySelector("h3").innerText = "Letrus";
-                info.querySelector("p").innerText =
-                  "Developed the Letrus website, a platform focused on writing and essay correction, using React and Typescript. Implemented new features, fixed bugs, and performed significant refactoring to adapt the project to new stacks.";
-                info.querySelector(".button-project a").innerText =
-                  "Access project";
-                break;
-              case 3:
-                info.querySelector("h3").innerText = "Letrus App";
-                info.querySelector("p").innerText =
-                  "Developed the Letrus mobile app using React Native and Typescript. Implemented new features, as well as continuous publishing and maintenance of the app on official stores.";
-                info.querySelector(".button-project a").innerText =
-                  "Access project";
-                break;
-              case 4:
-                info.querySelector("h3").innerText = "MakeProgress Ai";
-                info.querySelector("p").innerText =
-                  "Developed new features using React and Next.js, creating components, layouts, and implementing innovative features that use artificial intelligence to generate high-value results for clients.";
-                info.querySelector(".button-project a").innerText =
-                  "Access project";
-                break;
-              case 5:
-                info.querySelector("h3").innerText = "Diwo Maplead";
-                info.querySelector("p").innerText =
-                  "Developed new features for Diwo Maplead using Typescript, React, and Next.js. Worked on implementing advanced features and continuous maintenance of the project, ensuring its evolution and stability.";
-                info.querySelector(".button-project a").innerText =
-                  "Access project";
-                break;
-            }
-          });
-        } else {
-          location.reload();
-        }
-      }
-
-      window.onload = function () {
-        initCarousel();
-        typeWriter(document.querySelector("header h1"));
-      };
-    </script>
   </head>
+
   <body>
-    <header>
-      <nav class="navbar">
+    <!-- ─── Navbar ─────────────────────────────────────────────── -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="#" class="nav-logo">GR</a>
         <div class="nav-links">
-          <a href="#projetos" class="nav-link">Projetos</a>
-          <a href="#sobre" class="nav-link">Sobre</a>
-          <a href="#contato" class="nav-link">Contato</a>
+          <a href="#projetos" class="nav-link" data-i18n="nav.projects"
+            >Projetos</a
+          >
+          <a href="#sobre" class="nav-link" data-i18n="nav.about">Sobre</a>
+          <a href="#contato" class="nav-link" data-i18n="nav.contact"
+            >Contato</a
+          >
         </div>
-        <div class="controls">
-          <label class="switch">
-            <input type="checkbox" onclick="toggleDarkMode()" />
-            <span class="slider">
-              <span class="icon sun">☀️</span>
-              <span class="icon moon">🌙</span>
+        <div class="nav-controls">
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="theme-slider">
+              <span class="theme-icon sun">☀️</span>
+              <span class="theme-icon moon">🌙</span>
             </span>
           </label>
-          <select onchange="changeLanguage(this.value)">
+          <select
+            id="lang-select"
+            class="lang-select"
+            aria-label="Selecionar idioma"
+          >
             <option value="pt">PT</option>
             <option value="en">EN</option>
           </select>
         </div>
-      </nav>
-      <h1>Olá! Sou o Guilherme</h1>
-      <p>
-        Desenvolvedor <strong>apaixonado</strong> por transformar ideias em
-        realidade através de código.
-      </p>
-      <div class="buttons">
-        <a href="#projetos" class="btn-secondary">Projetos</a>
-        <a href="#contato" class="btn-primary">Contato</a>
+      </div>
+    </nav>
+
+    <!-- ─── Hero ───────────────────────────────────────────────── -->
+    <header class="hero" id="hero">
+      <div class="hero-container">
+        <div class="hero-badge reveal" data-delay="0">
+          <span class="status-dot"></span>
+          <span data-i18n="hero.badge">Disponível para novos projetos</span>
+        </div>
+        <h1 class="hero-title reveal" data-delay="1">
+          <span data-i18n="hero.greeting">Olá! Sou o</span>
+          <span class="gradient-text" data-i18n="hero.name">Guilherme</span>
+        </h1>
+        <p
+          class="hero-subtitle reveal"
+          data-delay="2"
+          data-i18n="hero.subtitle"
+        >
+          Software Engineer especializado em criar experiências digitais
+          excepcionais com foco em performance, acessibilidade e design.
+        </p>
+        <div class="hero-buttons reveal" data-delay="3">
+          <a
+            href="#projetos"
+            class="btn btn-primary"
+            data-i18n="hero.cta.projects"
+            >Ver Projetos</a
+          >
+          <a
+            href="#contato"
+            class="btn btn-outline"
+            data-i18n="hero.cta.contact"
+            >Entrar em Contato</a
+          >
+        </div>
       </div>
     </header>
-    <hr class="header-separator" />
-    <div class="companies">
-      <h2 class="trusted-companies">Empresas que confiam no meu trabalho</h2>
-      <div class="logos">
-        <img src="img/progress-logo.png" alt="Progress Ai Logo" />
 
-        <img src="img/letrus-logo.png" alt="Letrus Logo" />
-        <img src="img/rd-logo.png" alt="RD Station Logo" />
-        <img
-          style="height: 40px"
-          src="img/rd-crmlogo.png"
-          alt="RD Station CRM Logo"
-        />
-        <img src="img/diwo-logo.png" alt="Diwo Logo" />
-        <img src="img/baurets-logo.png" alt="Baurets Logo" />
-      </div>
-    </div>
-
-    <section id="projetos">
-      <h2>Projetos selecionados</h2>
-      <p class="projects-subtitle">
-        Experiências web impactantes, intuitivas e acessíveis para todos.
+    <!-- ─── Companies Marquee ──────────────────────────────────── -->
+    <div class="separator"></div>
+    <section class="companies-section">
+      <p class="companies-label reveal" data-i18n="companies.title">
+        Empresas que confiam no meu trabalho
       </p>
-      <div class="project">
-        <div class="side-content">
-          <div class="info">
-            <h3>RD Station CRM</h3>
-            <p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <!-- Original set -->
+          <img src="img/progress-logo.png" alt="Progress Ai" />
+          <img src="img/letrus-logo.png" alt="Letrus" />
+          <img src="img/rd-logo.png" alt="RD Station" />
+          <img src="img/rd-crmlogo.png" alt="RD Station CRM" class="logo-sm" />
+          <img src="img/diwo-logo.png" alt="Diwo" />
+          <img src="img/baurets-logo.png" alt="Baurets" />
+          <!-- Duplicate for seamless loop -->
+          <img
+            src="img/progress-logo.png"
+            alt="Progress Ai"
+            aria-hidden="true"
+          />
+          <img src="img/letrus-logo.png" alt="Letrus" aria-hidden="true" />
+          <img src="img/rd-logo.png" alt="RD Station" aria-hidden="true" />
+          <img
+            src="img/rd-crmlogo.png"
+            alt="RD Station CRM"
+            class="logo-sm"
+            aria-hidden="true"
+          />
+          <img src="img/diwo-logo.png" alt="Diwo" aria-hidden="true" />
+          <img src="img/baurets-logo.png" alt="Baurets" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+    <div class="separator"></div>
+
+    <!-- ─── Projects ───────────────────────────────────────────── -->
+    <section id="projetos" class="projects-section">
+      <div class="section-header">
+        <h2 class="section-title reveal" data-i18n="projects.title">
+          Projetos selecionados
+        </h2>
+        <p class="section-subtitle reveal" data-i18n="projects.subtitle">
+          Experiências web impactantes, intuitivas e acessíveis para todos.
+        </p>
+      </div>
+
+      <div class="projects-list">
+        <!-- Project 1 — RD Station CRM -->
+        <article class="project-card reveal">
+          <div class="project-content">
+            <div class="tech-stack">
+              <span class="tech-badge">Ruby on Rails</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Angular</span>
+            </div>
+            <h3 data-i18n="project.1.title">RD Station CRM</h3>
+            <p data-i18n="project.1.description">
               Desenvolvi novas funcionalidades para o RD Station CRM, empregando
               tecnologias como Ruby on Rails, React e Angular. Atuei diretamente
               nos times de internacionalização e desenvolvimento de novas
               features, implementando soluções inovadoras voltadas para o
-              mercado latino-americano, além de ferramentas avançadas de suporte
-              à internacionalização.
+              mercado latino-americano.
             </p>
-            <!-- <div class="button-project">
-              <a
-                href="https://crm.rdstation.com"
-                target="_blank"
-                class="btn-primary"
-                >Acessar projeto</a
-              >
-            </div> -->
           </div>
-        </div>
-        <img src="img/crm.gif" alt="RD Station CRM" />
-      </div>
+          <div class="project-media">
+            <img src="img/crm.gif" alt="RD Station CRM" loading="lazy" />
+          </div>
+        </article>
 
-      <div class="project">
-        <img src="img/marketing.gif" alt="RD Station Marketing" />
-        <div class="side-content">
-          <div class="info">
-            <h3>RD Station Marketing</h3>
-            <p>
+        <!-- Project 2 — RD Station Marketing -->
+        <article class="project-card reveal">
+          <div class="project-content">
+            <div class="tech-stack">
+              <span class="tech-badge">Ruby on Rails</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Angular</span>
+            </div>
+            <h3 data-i18n="project.2.title">RD Station Marketing</h3>
+            <p data-i18n="project.2.description">
               Desenvolvi novas funcionalidades para o RD Station Marketing,
               utilizando Ruby on Rails, React e Angular. Contribuí ativamente no
               time de internacionalização, criando soluções direcionadas ao
               mercado latino-americano e implementando ferramentas robustas de
               suporte à internacionalização.
             </p>
-            <!-- <div class="button-project">
-              <a
-                href="https://rdstation.com"
-                target="_blank"
-                class="btn-primary"
-                >Acessar projeto</a
-              >
-            </div> -->
           </div>
-        </div>
-      </div>
+          <div class="project-media">
+            <img
+              src="img/marketing.gif"
+              alt="RD Station Marketing"
+              loading="lazy"
+            />
+          </div>
+        </article>
 
-      <div class="project hidden">
-        <div class="side-content">
-          <div class="info">
-            <h3>Letrus</h3>
-            <p>
+        <!-- Project 3 — Letrus (hidden) -->
+        <article class="project-card extra-project">
+          <div class="project-content">
+            <div class="tech-stack">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">TypeScript</span>
+            </div>
+            <h3 data-i18n="project.3.title">Letrus</h3>
+            <p data-i18n="project.3.description">
               Trabalhei no desenvolvimento do site da Letrus, uma plataforma
               voltada para escrita e correção de redações, utilizando React e
               Typescript. Implementei novas funcionalidades, corrigi bugs e
               realizei refatorações significativas para adaptar o projeto a
               novas stacks.
             </p>
-            <!-- <div class="button-project">
-              <a
-                href="https://www.letrus.com"
-                target="_blank"
-                class="btn-primary"
-                >Acessar projeto</a
-              >
-            </div> -->
           </div>
-        </div>
-        <div class="carousel">
-          <img
-            src="img/letrus-image1.png"
-            alt="Letrus Project Image 1"
-            class="active"
-          />
-          <img src="img/letrus-image2.png" alt="Letrus Project Image 2" />
-          <img src="img/letrus-image3.png" alt="Letrus Project Image 3" />
-          <img src="img/letrus-image4.png" alt="Letrus Project Image 4" />
-          <img src="img/letrus-image5.png" alt="Letrus Project Image 5" />
-          <img src="img/letrus-image6.png" alt="Letrus Project Image 6" />
-          <div class="carousel-controls">
-            <button class="carousel-prev">❮</button>
-            <button class="carousel-next">❯</button>
+          <div class="project-media">
+            <div class="carousel" data-carousel>
+              <img src="img/letrus-image1.png" alt="Letrus 1" class="active" />
+              <img src="img/letrus-image2.png" alt="Letrus 2" />
+              <img src="img/letrus-image3.png" alt="Letrus 3" />
+              <img src="img/letrus-image4.png" alt="Letrus 4" />
+              <img src="img/letrus-image5.png" alt="Letrus 5" />
+              <img src="img/letrus-image6.png" alt="Letrus 6" />
+              <div class="carousel-controls">
+                <button
+                  class="carousel-btn carousel-prev"
+                  aria-label="Anterior"
+                >
+                  ❮
+                </button>
+                <button class="carousel-btn carousel-next" aria-label="Próximo">
+                  ❯
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="project hidden">
-        <div class="carousel">
-          <img
-            src="img/letrus-app-1.png"
-            alt="Letrus App Project Image 1"
-            class="active"
-          />
-          <img src="img/letrus-app-2.png" alt="Letrus App Project Image 2" />
-          <img src="img/letrus-app-3.png" alt="Letrus App Project Image 3" />
-          <img src="img/letrus-app-4.png" alt="Letrus App Project Image 4" />
-          <img src="img/letrus-app-5.png" alt="Letrus App Project Image 5" />
-          <div class="carousel-controls">
-            <button class="carousel-prev">❮</button>
-            <button class="carousel-next">❯</button>
-          </div>
-        </div>
-        <div class="side-content">
-          <div class="info">
-            <h3>Letrus App</h3>
-            <p>
+        <!-- Project 4 — Letrus App (hidden) -->
+        <article class="project-card extra-project">
+          <div class="project-content">
+            <div class="tech-stack">
+              <span class="tech-badge">React Native</span>
+              <span class="tech-badge">TypeScript</span>
+            </div>
+            <h3 data-i18n="project.4.title">Letrus App</h3>
+            <p data-i18n="project.4.description">
               Desenvolvi o aplicativo mobile da Letrus utilizando React Native e
               Typescript. Implementei novas funcionalidades, além de realizar a
               publicação e manutenção contínua do aplicativo nas lojas oficiais.
             </p>
-            <!-- <div class="button-project">
-              <a
-                href="https://play.google.com/store/apps/details?id=br.com.letrus.aluno.twa&hl=pt_BR"
-                target="_blank"
-                class="btn-primary"
-                >Acessar projeto</a
-              >
-            </div> -->
           </div>
-        </div>
-      </div>
+          <div class="project-media">
+            <div class="carousel" data-carousel>
+              <img
+                src="img/letrus-app-1.png"
+                alt="Letrus App 1"
+                class="active"
+              />
+              <img src="img/letrus-app-2.png" alt="Letrus App 2" />
+              <img src="img/letrus-app-3.png" alt="Letrus App 3" />
+              <img src="img/letrus-app-4.png" alt="Letrus App 4" />
+              <img src="img/letrus-app-5.png" alt="Letrus App 5" />
+              <div class="carousel-controls">
+                <button
+                  class="carousel-btn carousel-prev"
+                  aria-label="Anterior"
+                >
+                  ❮
+                </button>
+                <button class="carousel-btn carousel-next" aria-label="Próximo">
+                  ❯
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
 
-      <div class="project hidden">
-        <div class="side-content">
-          <div class="info">
-            <h3>MakeProgress Ai</h3>
-            <p>
+        <!-- Project 5 — MakeProgress Ai (hidden) -->
+        <article class="project-card extra-project">
+          <div class="project-content">
+            <div class="tech-stack">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Next.js</span>
+              <span class="tech-badge">AI</span>
+            </div>
+            <h3 data-i18n="project.5.title">MakeProgress Ai</h3>
+            <p data-i18n="project.5.description">
               Desenvolvi novas funcionalidades utilizando React e Next.js,
               criando componentes, layouts e implementando features inovadoras
               que utilizam inteligência artificial para gerar resultados de alto
               valor para os clientes.
             </p>
-            <!-- <div class="button-project">
-              <a
-                href="https://www.makeprogressai.ca"
-                target="_blank"
-                class="btn-primary"
-                >Acessar projeto</a
-              >
-            </div> -->
           </div>
-        </div>
-        <img src="img/progress.gif" alt="RD Station CRM" />
-      </div>
+          <div class="project-media">
+            <img src="img/progress.gif" alt="MakeProgress Ai" loading="lazy" />
+          </div>
+        </article>
 
-      <div class="project hidden">
-        <img src="img/diwo.gif" alt="Diwo Maplead" />
-        <div class="side-content">
-          <div class="info">
-            <h3>Diwo Maplead</h3>
-            <p>
+        <!-- Project 6 — Diwo Maplead (hidden) -->
+        <article class="project-card extra-project">
+          <div class="project-content">
+            <div class="tech-stack">
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Next.js</span>
+            </div>
+            <h3 data-i18n="project.6.title">Diwo Maplead</h3>
+            <p data-i18n="project.6.description">
               Desenvolvi novas funcionalidades para o Diwo Maplead utilizando
               Typescript, React e Next.js. Atuei na implementação de features
               avançadas e na manutenção contínua do projeto, garantindo sua
               evolução e estabilidade.
             </p>
-            <!-- <div class="button-project">
-              <a
-                href="https://app.maplead.com.br"
-                target="_blank"
-                class="btn-primary"
-                >Acessar projeto</a
-              >
-            </div> -->
           </div>
-        </div>
+          <div class="project-media">
+            <img src="img/diwo.gif" alt="Diwo Maplead" loading="lazy" />
+          </div>
+        </article>
       </div>
 
-      <button
-        id="show-more-btn"
-        class="btn-secondary"
-        onclick="showMoreProjects()"
-      >
-        Mostrar mais
-      </button>
-      <button
-        id="show-less-btn"
-        class="btn-secondary"
-        onclick="showLessProjects()"
-        style="display: none"
-      >
-        Mostrar menos
-      </button>
+      <div class="projects-actions">
+        <button
+          id="show-more-btn"
+          class="btn btn-outline"
+          data-i18n="projects.showMore"
+        >
+          Mostrar mais
+        </button>
+        <button
+          id="show-less-btn"
+          class="btn btn-outline"
+          style="display: none"
+          data-i18n="projects.showLess"
+        >
+          Mostrar menos
+        </button>
+      </div>
     </section>
 
-    <section id="sobre">
-      <div class="about">
-        <img src="img/eu.png" alt="Guilherme Vilas Boas Roberto photo" />
-        <div class="side-content">
-          <h2>Soluções digitais que fazem a diferença.</h2>
-          <p>
+    <!-- ─── About ──────────────────────────────────────────────── -->
+    <section id="sobre" class="about-section">
+      <div class="about-container">
+        <div class="about-image reveal">
+          <img src="img/eu.png" alt="Guilherme Vilas Boas Roberto" />
+        </div>
+        <div class="about-content">
+          <h2 class="reveal" data-i18n="about.title">
+            Soluções digitais que fazem a diferença.
+          </h2>
+          <p class="reveal" data-i18n="about.description">
             Engenheiro de Software com mais de 5 anos de experiência consolidada
             em desenvolvimento full-stack. Graduado em Análise e Desenvolvimento
             de Sistemas pelo IFSP e pós-graduado em Engenharia de Software pela
@@ -462,15 +372,38 @@
             de APIs, implementação de ferramentas de internacionalização e na
             manutenção e evolução de projetos complexos.
           </p>
-          <p>Principais habilidades incluem:</p>
-          <ul>
-            <li><span>React, React Native, Ruby on Rails e GoLang</span></li>
-            <li><span>MongoDB, Redis, Elasticsearch</span></li>
-            <li><span>MySql, Postgres e SQL Server</span></li>
-            <li><span>AWS, Azure e GCP</span></li>
-          </ul>
-          <div class="button-project">
-            <a href="mailto:guilherme.vb.roberto@gmail.com" class="btn-primary"
+          <p class="skills-label reveal" data-i18n="about.skills.label">
+            Principais habilidades:
+          </p>
+          <div class="skills-grid reveal">
+            <div class="skill-category">
+              <span class="skill-icon">⚛️</span>
+              <span data-i18n="about.skill.1"
+                >React, React Native, Ruby on Rails e GoLang</span
+              >
+            </div>
+            <div class="skill-category">
+              <span class="skill-icon">🗄️</span>
+              <span data-i18n="about.skill.2"
+                >MongoDB, Redis, Elasticsearch</span
+              >
+            </div>
+            <div class="skill-category">
+              <span class="skill-icon">💾</span>
+              <span data-i18n="about.skill.3"
+                >MySql, Postgres e SQL Server</span
+              >
+            </div>
+            <div class="skill-category">
+              <span class="skill-icon">☁️</span>
+              <span data-i18n="about.skill.4">AWS, Azure e GCP</span>
+            </div>
+          </div>
+          <div class="reveal">
+            <a
+              href="mailto:guilherme.vb.roberto@gmail.com"
+              class="btn btn-primary"
+              data-i18n="about.cta"
               >Entre em contato</a
             >
           </div>
@@ -478,36 +411,43 @@
       </div>
     </section>
 
-    <hr class="header-separator" />
+    <div class="separator"></div>
 
-    <section id="contato">
-      <div class="contact-container">
-        <div class="contact-text">
-          <p>
+    <!-- ─── Contact ────────────────────────────────────────────── -->
+    <section id="contato" class="contact-section">
+      <div class="contact-card reveal">
+        <div class="contact-header">
+          <h2 data-i18n="contact.title">Vamos conversar?</h2>
+          <p data-i18n="contact.subtitle">
             Entre em contato comigo para discutir oportunidades ou colaborações!
           </p>
         </div>
-        <div class="contacts-info">
-          <p>
-            <a href="mailto:guilherme.vb.roberto@gmail.com"
-              >guilherme.vb.roberto@gmail.com</a
-            >
-          </p>
+        <div class="contact-links">
+          <a href="mailto:guilherme.vb.roberto@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            <span>guilherme.vb.roberto@gmail.com</span>
+          </a>
           <div class="social-links">
             <a
               href="https://github.com/guintoki"
               target="_blank"
               title="GitHub"
+              class="social-link"
             >
               <i class="fab fa-github"></i>
             </a>
-            <a href="mailto:guilherme.vb.roberto@gmail.com" title="Email">
+            <a
+              href="mailto:guilherme.vb.roberto@gmail.com"
+              title="Email"
+              class="social-link"
+            >
               <i class="fas fa-envelope"></i>
             </a>
             <a
               href="https://linkedin.com/in/guilherme-vilas-boas-roberto"
               target="_blank"
               title="LinkedIn"
+              class="social-link"
             >
               <i class="fab fa-linkedin"></i>
             </a>
@@ -516,14 +456,16 @@
       </div>
     </section>
 
-    <footer>
+    <!-- ─── Footer ─────────────────────────────────────────────── -->
+    <footer class="footer">
       <p>
         &copy;
-        <a href="https://mrnr.com.br" target="_blank" title="Instagram"
-          >MRNRDSGN</a
-        >
-        e Guilherme Roberto. Todos os direitos reservados
+        <a href="https://mrnr.com.br" target="_blank">MRNRDSGN</a> e Guilherme
+        Roberto. Todos os direitos reservados
       </p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
   </body>
 </html>
