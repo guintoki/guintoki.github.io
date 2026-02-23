@@ -128,7 +128,7 @@ const translations = {
       "Desenvolvi novas funcionalidades para o Diwo Maplead utilizando Typescript, React e Next.js. Atuei na implementação de features avançadas e na manutenção contínua do projeto, garantindo sua evolução e estabilidade.",
     "about.title": "Soluções digitais que fazem a diferença.",
     "about.description":
-      "Engenheiro de Software com mais de 5 anos de experiência consolidada em desenvolvimento full-stack. Graduado em Análise e Desenvolvimento de Sistemas pelo IFSP e pós-graduado em Engenharia de Software pela PUC Minas, possuo sólida expertise em desenvolvimento frontend e backend. Minha trajetória profissional inclui ampla experiência no desenvolvimento de aplicações web e mobile, integração e construção de APIs, implementação de ferramentas de internacionalização e na manutenção e evolução de projetos complexos.",
+      "Engenheiro de Software com mais de 6 anos de experiência consolidada em desenvolvimento full-stack. Graduado em Análise e Desenvolvimento de Sistemas pelo IFSP e pós-graduado em Engenharia de Software pela PUC Minas, possuo sólida expertise em desenvolvimento frontend e backend. Minha trajetória profissional inclui ampla experiência no desenvolvimento de aplicações web e mobile, integração e construção de APIs, implementação de ferramentas de internacionalização e na manutenção e evolução de projetos complexos.",
     "about.skills.label": "Principais habilidades:",
     "about.cat.frontend": "Frontend",
     "about.cat.backend": "Backend",
@@ -176,7 +176,7 @@ const translations = {
       "Developed new features for Diwo Maplead using Typescript, React, and Next.js. Worked on implementing advanced features and continuous maintenance of the project, ensuring its evolution and stability.",
     "about.title": "Digital solutions that make a difference.",
     "about.description":
-      "Software Engineer with over 5 years of solid experience in full-stack development. Graduated in Systems Analysis and Development from IFSP and post-graduated in Software Engineering from PUC Minas, with solid expertise in frontend and backend development. My professional journey includes extensive experience in developing web and mobile applications, integrating and building APIs, implementing internationalization tools, and maintaining and evolving complex projects.",
+      "Software Engineer with over 6 years of solid experience in full-stack development. Graduated in Systems Analysis and Development from IFSP and post-graduated in Software Engineering from PUC Minas, with solid expertise in frontend and backend development. My professional journey includes extensive experience in developing web and mobile applications, integrating and building APIs, implementing internationalization tools, and maintaining and evolving complex projects.",
     "about.skills.label": "Key skills:",
     "about.cat.frontend": "Frontend",
     "about.cat.backend": "Backend",
