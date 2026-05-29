@@ -126,6 +126,9 @@ const translations = {
     "project.6.title": "Diwo Maplead",
     "project.6.description":
       "Desenvolvi novas funcionalidades para o Diwo Maplead utilizando Typescript, React e Next.js. Atuei na implementação de features avançadas e na manutenção contínua do projeto, garantindo sua evolução e estabilidade.",
+    "project.7.title": "GIPE",
+    "project.7.description":
+      "Atuei no GIPE (Gestão de Intercorrência de Proteção Escolar), projeto em produção voltado para centralizar e armazenar registros de intercorrências de forma prática e segura. Trabalhei de ponta a ponta na evolução da solução, participando das decisões iniciais, do entendimento do fluxo operacional e do acompanhamento do deploy, com front-end em Next.js e backend em Django.",
     "about.title": "Soluções digitais que fazem a diferença.",
     "about.description":
       "Engenheiro de Software com mais de 6 anos de experiência consolidada em desenvolvimento full-stack. Graduado em Análise e Desenvolvimento de Sistemas pelo IFSP e pós-graduado em Engenharia de Software pela PUC Minas, possuo sólida expertise em desenvolvimento frontend e backend. Minha trajetória profissional inclui ampla experiência no desenvolvimento de aplicações web e mobile, integração e construção de APIs, implementação de ferramentas de internacionalização e na manutenção e evolução de projetos complexos.",
@@ -174,6 +177,9 @@ const translations = {
     "project.6.title": "Diwo Maplead",
     "project.6.description":
       "Developed new features for Diwo Maplead using Typescript, React, and Next.js. Worked on implementing advanced features and continuous maintenance of the project, ensuring its evolution and stability.",
+    "project.7.title": "GIPE",
+    "project.7.description":
+      "Worked on GIPE (School Protection Incident Management), a production system focused on centralizing and securely storing incident records in a practical way. I contributed end to end to the solution's evolution, from the initial decision-making and operational flow analysis to deployment tracking, with a Next.js frontend and Django backend.",
     "about.title": "Digital solutions that make a difference.",
     "about.description":
       "Software Engineer with over 6 years of solid experience in full-stack development. Graduated in Systems Analysis and Development from IFSP and post-graduated in Software Engineering from PUC Minas, with solid expertise in frontend and backend development. My professional journey includes extensive experience in developing web and mobile applications, integrating and building APIs, implementing internationalization tools, and maintaining and evolving complex projects.",
